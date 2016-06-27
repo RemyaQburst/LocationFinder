@@ -8,7 +8,8 @@
                     url: '/',
                     views: {
                         'content': {
-                            templateUrl: 'app/partials/location.html'
+                            templateUrl: 'app/partials/location.html',
+                            controller : 'locationCtrl'
                         }
                     }
                 })

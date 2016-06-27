@@ -1,8 +1,9 @@
 <div class="container">
 	<header>
 		<div class="pull-right">
-			<a href="">English</a>
-			<a href="">French</a>
+			<span ng-click="changeLanguage('en')">English</span>
+			<span ng-click="changeLanguage('fr')">French</span>
 		</div>	
 	</header>
+	<h1>{{'HEADING' | translate}}</h1>
 </div>
