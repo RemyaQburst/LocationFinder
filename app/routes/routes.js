@@ -4,16 +4,22 @@
         //$locationProvider.html5Mode(true);
         $urlRouterProvider.otherwise('/');
         $stateProvider
-                .state('home', {
-                    url: '/',
-                    views: {
-                        'content': {
-                            templateUrl: 'app/partials/location.html',
-                            controller : 'locationCtrl'
-                        }
+            .state('home', {
+                url: '/',
+                views: {
+                    'header': {
+                        templateUrl: 'app/partials/header.html'
+                    },
+                    'content': {
+                        templateUrl: 'app/partials/location.html',
+                        controller: 'locationCtrl'
+                    },
+                    'footer': {
+                        templateUrl: 'app/partials/footer.html'
                     }
-                })
+                }
+            })
     }
-angular.module('locationApp')
-            .config(Routes);
+    angular.module('locationApp')
+        .config(Routes);
 })();
