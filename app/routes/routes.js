@@ -14,6 +14,10 @@
                         templateUrl: 'app/partials/location.html',
                         controller: 'locationCtrl'
                     },
+                    'map': {
+                        templateUrl: 'app/partials/map.html',
+                        controller: 'mapCtrl'
+                    },
                     'footer': {
                         templateUrl: 'app/partials/footer.html'
                     }
