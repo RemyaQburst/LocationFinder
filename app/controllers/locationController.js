@@ -1,51 +1,46 @@
-(function() {
+(function () {
     'use strict';
-    angular.module('locationApp')
+angular.module('locationApp')
         .controller('locationCtrl', locationCtrl);
 locationCtrl.$inject = ["$scope","$rootScope","$translate","NgMap","MapService","GetLangService"];
 function locationCtrl($scope,$rootScope,$translate,NgMap,MapService,GetLangService) {
-	NgMap.getMap().then(function(map) {
-		$scope.map = map;
-	});
-	$scope.positionObj = {};
-	MapService.getMapCords().then(function(positionObj) {
-		$scope.positionObj.lat = positionObj.coords.latitude;
-		$scope.positionObj.long = positionObj.coords.longitude;
-  		var geocoder = new google.maps.Geocoder();
+    NgMap.getMap().then(function(map) {
+        $scope.map = map;
+    });
+    $scope.positionObj = {};
+    MapService.getMapCords().then(function(positionObj) {
+        $scope.positionObj.lat = positionObj.coords.latitude;
+        $scope.positionObj.long = positionObj.coords.longitude;
+        var geocoder = new google.maps.Geocoder();
         var latlng = new google.maps.LatLng(positionObj.coords.latitude, positionObj.coords.longitude);
         geocoder.geocode({ 'latLng': latlng }, function (results, status) {
-            console.log(results, "geocoder");
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results) {
                     $scope.infowinTxt = results[0].formatted_address;
                     for(var i=0;i<results.length;i++) {
-						for(var j=0;j<results[i].types.length;j++) {
-							if(results[i].types[j] == "country") {
-								$scope.country = results[i].formatted_address;
-							}
-						}
-					}
+                        for(var j=0;j<results[i].types.length;j++) {
+                            if(results[i].types[j] == "country") {
+                                $scope.country = results[i].formatted_address;
+                            }
+                        }
+                    }
                 } else {
                     $scope.infowinTxt = 'Location not found';
                 }
             } else {
                 $scope.infowinTxt = 'Geocoder failed due to: ' + status;
             }
-             console.log($scope.country,"country1");
              GetLangService.getLangMapper('app/json/langMapper.json').then(function (res) {
-                    console.log(res.data);
                     angular.forEach(res.data,function(key,value){
-                    	if($scope.country == value) {
-                    		console.log("key",key);
-                    		$translate.use(key);
-                    	}
+                        if($scope.country == value) {
+                            $translate.use(key);
+                        }
                     });
               });
         });
-	});
-	$scope.changeLanguage = function (langKey) {
-    	$translate.use(langKey);
-  	};
+    });
+    $scope.changeLanguage = function (langKey) {
+        $translate.use(langKey);
+    };
 };
 })();
-
