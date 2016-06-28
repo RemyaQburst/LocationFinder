@@ -21,6 +21,21 @@
     font-size: 28px;
 }
 
+header a {
+    color: #ef7423;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #4285f4;
+}
+
+.pull-right {
+    padding-top: 35px;
+}
+
 
 /*Body*/
 

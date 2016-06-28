@@ -8,15 +8,12 @@
                 url: '/',
                 views: {
                     'header': {
-                        templateUrl: 'app/partials/header.html'
+                        templateUrl: 'app/partials/header.html',
+                        controller: 'locationCtrl'
                     },
                     'content': {
                         templateUrl: 'app/partials/location.html',
                         controller: 'locationCtrl'
-                    },
-                    'map': {
-                        templateUrl: 'app/partials/map.html',
-                        controller: 'mapCtrl'
                     },
                     'footer': {
                         templateUrl: 'app/partials/footer.html'
