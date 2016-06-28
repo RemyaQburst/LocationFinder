@@ -13,4 +13,11 @@
 		<span>{{'PARA2' | translate}}</span>
 		<span>{{'PARA3' | translate}}</span>
 	</p>
+	<ng-map center="[{{positionObj.lat}}, {{positionObj.long}}]" zoom="13" default-style="true">
+		<marker position="[{{positionObj.lat}}, {{positionObj.long}}]" id="mypos" animation="Animation.BOUNCE" centered="true" on-click="map.showInfoWindow('bar')"></marker>
+		<info-window id="bar" visible-on-marker="mypos">
+	        <div reverse-geocode lat="{{positionObj.lat}}" long="{{positionObj.long}}"> 
+	        </div>
+      	</info-window>
+	</ng-map>
 </div>
