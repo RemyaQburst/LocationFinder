@@ -1,11 +1,12 @@
-(function () {
+(function() {
     'use strict';
-angular.module('locationApp')
+    angular.module('locationApp')
         .controller('locationCtrl', locationCtrl);
-locationCtrl.$inject = ["$scope","$translate"];
-function locationCtrl($scope,$translate) {
-	$scope.changeLanguage = function (langKey) {
-    	$translate.use(langKey);
-  	};
-};
+    locationCtrl.$inject = ["$scope", "$translate"];
+
+    function locationCtrl($scope, $translate) {
+        $scope.changeLanguage = function(langKey) {
+            $translate.use(langKey);
+        };
+    };
 })();

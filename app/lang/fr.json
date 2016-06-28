@@ -1,6 +1,7 @@
 {
-  "HEADING": "EMPLACEMENT CHERCHEUR",
+  "HEADING": "Emplacement Chercheur",
   "PARA1" : "Jamais demandé où vous êtes? ",
   "PARA2" : "Cette application rend plus facile pour vous de trouver votre emplacement. ",
-  "PARA3" : "Trouvez votre emplacement sur la carte google où le marqueur est ."
+  "PARA3" : "Trouvez votre emplacement sur la carte google où le marqueur est .",
+  "GOOGLEMAP": "Mes cartes Google Demo"
 }
