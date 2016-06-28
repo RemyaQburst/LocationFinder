@@ -1,6 +1,6 @@
-(function () {
+(function() {
     'use strict';
-angular.module('locationApp')
+    angular.module('locationApp')
         .controller('locationCtrl', locationCtrl);
 locationCtrl.$inject = ["$scope","$rootScope","$translate","NgMap","MapService","GetLangService"];
 function locationCtrl($scope,$rootScope,$translate,NgMap,MapService,GetLangService) {
@@ -48,3 +48,4 @@ function locationCtrl($scope,$rootScope,$translate,NgMap,MapService,GetLangServi
   	};
 };
 })();
+
